@@ -28,15 +28,16 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.get("/:path/:id", (req, res) => {
-	const { path, id } = req.params;
-	console.log(path);
-	res.json({ path, id });
-});
+app.use("/api", require('./routes/test'));
+
+// app.get("/:path/:id", (req, res) => {
+// 	const { path, id } = req.params;
+// 	console.log(path);
+// 	res.json({ path, id });
+// });
 // app.get("/api", (req, res) => {
 // 	res.json({ path: "api" });
 // });
-// app.use("/api", registro);
 // app.use("/api", contrasena);
 // app.use("/api", familiaviv);
 
