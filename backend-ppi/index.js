@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.use("/api", require('./routes/test'));
+app.use(require('./routes/test'));
 
 // app.get("/:path/:id", (req, res) => {
 // 	const { path, id } = req.params;
