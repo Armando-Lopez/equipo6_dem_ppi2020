@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Bienvenida from "../pages/Bienvenida";
 import Registrarse from "../pages/Registrarse";
 import IniciarSesion from "../pages/IniciarSesion";
-import OlvidasteContraseña from "../pages/OlvidasteContraseña";
+import OlvidasteContraseña from "../pages/OlvidasteContrasena";
 import ConfiguraContraseña from "../pages/ConfiguraCont";
 import ContinuarSinCuenta from "../pages/ContinuarSinCuenta";
 import SoporteTecnico1 from "../pages/SoporteTecnico1";

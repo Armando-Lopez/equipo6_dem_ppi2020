@@ -7,7 +7,7 @@ const morgan = require("morgan");
 // const familiaviv = require("../routes/familia-y-vivienda");
 
 // Ajustes
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 3002);
 
 // Middlewares
 app.use(express.json());
@@ -16,8 +16,16 @@ app.use(morgan("dev"));
 
 // Routes //
 app.use("/", (req, res) => {
-	// console.log(req);
-	res.json({ "Hello": "world" });
+  // console.log(req);
+  
+  //configura para resivir las peticiones desde otras aplicaciones, el tipo de datos (JSON)
+	res.setHeader("Access-Control-Allow-Headers","X-Requested-With, content-type");
+	res.setHeader("Access-Control-Allow-Origin", "*");
+	res.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE");
+  res.setHeader("Content-Type", "application/json;charset=utf-8");
+  
+
+	res.json({ responde: "Hola desde el servidor :D" });
 });
 
 // app.use("/api", ajustes);
