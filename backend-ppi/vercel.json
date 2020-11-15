@@ -7,8 +7,8 @@
 		}
   ],
   "routes": [
-    { "src": "/", "dest": "./index.js" },
-    { "src": "/api/test", "dest": "./index.js" },
-    { "src": "/api/ajustes", "dest": "./index.js" }
+    { "src": "/", "dest": "/index.js" },
+    { "src": "/api/test:id", "dest": "/index.js" },
+    { "src": "/api/ajustes", "dest": "/index.js" }
   ]
 }
