@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const mysqlConnection = require("../db/db");
+// const mysqlConnection = require("../db/db");
 
 /* Obtener la información del usuario en los 
 ajustes de la cuenta */

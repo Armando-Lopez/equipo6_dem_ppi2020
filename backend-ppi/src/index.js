@@ -24,9 +24,9 @@ app.use((req, res, next ) => {
 });
 
 app.use("/api", ajustes);
-app.use("/api", registro);
-app.use("/api", contrasena);
-app.use("/api", familiaviv);
+// app.use("/api", registro);
+// app.use("/api", contrasena);
+// app.use("/api", familiaviv);
 
 // Ajustes del servidor
 app.listen(app.get("port"), () => {
