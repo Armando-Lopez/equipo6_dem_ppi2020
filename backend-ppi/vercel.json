@@ -7,8 +7,7 @@
 		}
   ],
   "routes": [
-    { "src": "/", "dest": "/index.js" },
-    { "src": "/:path/:id", "dest": "/index.js" },
+    { "src": "/test/(?<id>[^/]+)", "dest": "/test?id=$id" },
     { "src": "/ajustes", "dest": "/index.js" }
   ]
 }
