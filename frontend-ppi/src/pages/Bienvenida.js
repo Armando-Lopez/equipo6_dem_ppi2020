@@ -7,9 +7,11 @@ import InicioSesion from "../components/inicio_sesion";
 
 const Bienvenida = () => {
 	useEffect(() => {
-    axios.get("http://localhost:3002/ajustes/5").then((res) => {
-			console.log(res);
-		});
+		axios
+			.get("http://localhost:3002/ajustes/5")
+			.then((res) => {
+				console.log(res);
+			});
 	}, []);
 
 	return (
