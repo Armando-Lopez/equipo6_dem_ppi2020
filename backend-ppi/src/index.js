@@ -17,7 +17,7 @@ app.use(morgan("dev"));
 // Routes //
 app.use("/", (req,res)=>{
   // console.log(req);
-  res.send("Hola cucho")
+  res.send("Hello, world")
 });
 
 // app.use("/api", ajustes);
