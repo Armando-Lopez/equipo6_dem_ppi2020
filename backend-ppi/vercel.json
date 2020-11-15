@@ -7,6 +7,6 @@
 		}
   ],
   "routes": [
-    { "src": "/test", "dest": "/index.js" }
+    { "src": "/test/(?<id>[^/]+)", "dest": "/index.js" }
   ]
 }
