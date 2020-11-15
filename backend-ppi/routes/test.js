@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/test", (req, res) => {
-	// const { path, id } = req.params;
-	res.json({ in:"test" });
+router.get("/test/:id", (req, res) => {
+	const { id } = req.params;
+	res.json({ in:"test", id });
 });
 
 module.exports = router;

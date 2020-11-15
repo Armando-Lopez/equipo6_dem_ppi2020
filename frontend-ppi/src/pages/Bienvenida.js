@@ -7,7 +7,7 @@ import InicioSesion from "../components/inicio_sesion";
 
 const Bienvenida = () => {
 	useEffect(() => {
-    axios.get("http://localhost:3002/test/5").then((res) => {
+    axios.get("https://alto-voltaje-back.vercel.app/test").then((res) => {
 			console.log(res);
 		});
 	}, []);
