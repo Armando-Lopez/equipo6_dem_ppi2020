@@ -7,7 +7,7 @@ const morgan = require("morgan");
 // const familiaviv = require("../routes/familia-y-vivienda");
 
 // Ajustes
-app.set("port", process.env.PORT || 3002);
+app.set("port", process.env.PORT || 3000);
 
 // Middlewares
 app.use(express.json());
