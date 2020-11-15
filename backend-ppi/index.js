@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const ajustes = require("../routes/ajustes");
-const registro = require("../routes/registro");
-const contrasena = require("../routes/contrasena");
-const familiaviv = require("../routes/familia-y-vivienda");
+const ajustes = require("./routes/ajustes");
+const registro = require("./routes/registro");
+const contrasena = require("./routes/contrasena");
+const familiaviv = require("./routes/familia-y-vivienda");
 
 // Ajustes
 app.set("port", process.env.PORT || 3002);
@@ -24,6 +24,7 @@ app.use((req, res, next ) => {
 });
 
 app.use("/api", ajustes);
+app.use("/src", ajustes);
 // app.use("/api", registro);
 // app.use("/api", contrasena);
 // app.use("/api", familiaviv);
