@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const cors = require('cors')
+const cors = require("cors");
 // const ajustes = require("./routes/ajustes");
 // const registro = require("./routes/registro");
 // const contrasena = require("./routes/contrasena");
@@ -11,22 +11,29 @@ const cors = require('cors')
 app.set("port", process.env.PORT || 3002);
 
 // Middlewares
-app.use(cors())
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 
 //configura para resivir las peticiones desde otras aplicaciones, el tipo de datos (JSON)
-app.use((req, res, next ) => {
-	res.setHeader("Access-Control-Allow-Headers","X-Requested-With, content-type");
+app.use((req, res, next) => {
+	res.setHeader(
+		"Access-Control-Allow-Headers",
+		"X-Requested-With, content-type"
+	);
 	res.setHeader("Access-Control-Allow-Origin", "*");
 	res.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE");
-  res.setHeader("Content-Type", "application/json;charset=utf-8");
-  next();
+	res.setHeader("Content-Type", "application/json;charset=utf-8");
+	next();
 });
 
-app.get("/",(req,res)=>{
-  res.json({Hello:"World"})
+app.get("/", (req, res) => {
+	res.json({ Hello: "World" });
+});
+
+app.get("/api", (req, res) => {
+	res.json({ path: "api" });
 });
 // app.use("/api", registro);
 // app.use("/api", contrasena);

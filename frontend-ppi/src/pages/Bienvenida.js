@@ -7,7 +7,7 @@ import InicioSesion from "../components/inicio_sesion";
 
 const Bienvenida = () => {
 	useEffect(() => {
-    axios.get("http://localhost:3002").then((res) => {
+    axios.get("http://localhost:3002/api").then((res) => {
 			console.log(res);
 		});
 	}, []);
