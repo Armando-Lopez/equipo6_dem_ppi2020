@@ -2,12 +2,10 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const cors = require('cors')
-
-
-const ajustes = require("./routes/ajustes");
-const registro = require("./routes/registro");
-const contrasena = require("./routes/contrasena");
-const familiaviv = require("./routes/familia-y-vivienda");
+// const ajustes = require("./routes/ajustes");
+// const registro = require("./routes/registro");
+// const contrasena = require("./routes/contrasena");
+// const familiaviv = require("./routes/familia-y-vivienda");
 
 // Ajustes
 app.set("port", process.env.PORT || 3002);
@@ -27,7 +25,9 @@ app.use((req, res, next ) => {
   next();
 });
 
-app.use("/", ajustes);
+app.get("/",(req,res)=>{
+  res.json({Hello:"World"})
+});
 // app.use("/api", registro);
 // app.use("/api", contrasena);
 // app.use("/api", familiaviv);
