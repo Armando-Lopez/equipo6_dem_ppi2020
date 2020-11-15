@@ -15,9 +15,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 
 // Routes //
-app.use("/", (req,res)=>{
-  // console.log(req);
-  res.send("Hello, world")
+app.use("/", (req, res) => {
+	// console.log(req);
+	res.json({ "Hello": "world" });
 });
 
 // app.use("/api", ajustes);
