@@ -11,9 +11,9 @@ const cors = require("cors");
 app.set("port", process.env.PORT || 3002);
 
 // Middlewares
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 
 //configura para resivir las peticiones desde otras aplicaciones, el tipo de datos (JSON)
@@ -27,7 +27,7 @@ app.use((req, res, next) => {
     res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE");
     return res.status(200).json({})
 	}
-	// res.header("Content-Type", "application/json;charset=utf-8");
+	res.header("Content-Type", "application/json;charset=utf-8");
 	next();
 });
 
