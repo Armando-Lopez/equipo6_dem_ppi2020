@@ -23,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 // 		"Access-Control-Allow-Headers",
 // 		"Origin, X-Request-Width, Content-Type, Accept, Authorization"
 // 	);
+
 //   res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE");
 // 	if (req.method === "OPTIONS") {
 //     res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE");
