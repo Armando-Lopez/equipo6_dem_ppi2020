@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //configura para resivir las peticiones desde otras aplicaciones, el tipo de datos (JSON)
 app.use((req, res, next) => {
-	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Origin", "https://ljh5p.csb.app");
 	res.header(
 		"Access-Control-Allow-Headers",
 		"Origin, X-Request-Width, Content-Type, Accept, Authorization"
