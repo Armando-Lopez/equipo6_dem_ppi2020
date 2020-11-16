@@ -1,15 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/test/:id", (req, res) => {
-	const { id } = req.params;
-  res.json({ data: req.body });
+router.get("/test/:data", (req, res) => {
+	res.json({ data: req.params });
 });
 
 router.post("/test", (req, res) => {
-	setTimeout(() => {
-		res.json({ data: req.body });
-	}, 3000);
+	res.json({ data: req.body });
+});
+
+router.post("/test", (req, res) => {
+	res.json({ data: req.body });
 });
 
 module.exports = router;
