@@ -18,7 +18,10 @@ app.use(morgan("dev"));
 
 //configura para resivir las peticiones desde otras aplicaciones, el tipo de datos (JSON)
 app.use((req, res, next) => {
-	res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, content-type");
+	res.setHeader(
+		"Access-Control-Allow-Headers",
+		"X-Requested-With, content-type"
+	);
 	res.setHeader("Access-Control-Allow-Origin", "*");
 	res.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE");
 	res.setHeader("Content-Type", "application/json;charset=utf-8");
@@ -37,14 +40,6 @@ app.use(require('./routes/test'));
 // });
 // app.use("/api", contrasena);
 // app.use("/api", familiaviv);
-// Routes //
-
-app.use(require('./routes/ajustes'));
-app.use(require('./routes/registro'));
-// app.use( contrasena);
-// app.use( familiaviv);
-// app.use( iniciosesion);
-app.use(require("./routes/electrdomiesticos"));
 
 // Ajustes del servidor
 app.listen(app.get("port"), () => {
