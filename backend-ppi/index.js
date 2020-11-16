@@ -24,9 +24,13 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.use(require('./routes/test'));
-app.use(require('./routes/registro'));
+app.use(require("./routes/test"));
 
+
+app.post("/registro", (req, res) => {
+	const { documento, nombre, email, contrasena } = req.body;
+	res.json({ data: req.body });
+});
 // app.get("/:path/:id", (req, res) => {
 // 	const { path, id } = req.params;
 // 	console.log(path);
