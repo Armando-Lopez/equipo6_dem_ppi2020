@@ -6,8 +6,13 @@ import Titulo1 from "../components/titulo_1";
 import InicioSesion from "../components/inicio_sesion";
 
 const Bienvenida = () => {
+	let data = {
+		name: "Diego",
+		lastName: "Lopez",
+		age: 21,
+	};
 	useEffect(() => {
-    axios.get("https://alto-voltaje-back.vercel.app/test").then((res) => {
+		axios.post("https://lcs4k.sse.codesandbox.io/api/test", data).then((res) => {
 			console.log(res);
 		});
 	}, []);

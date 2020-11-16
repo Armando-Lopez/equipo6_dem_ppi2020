@@ -1,45 +1,34 @@
 const express = require("express");
 const app = express();
-const morgan = require("morgan");
 const cors = require("cors");
-// const ajustes = require("./routes/ajustes");
-// const registro = require("./routes/registro");
-// const contrasena = require("./routes/contrasena");
-// const familiaviv = require("./routes/familia-y-vivienda");
+const ajustes = require("./routes/ajustes");
+const registro = require("./routes/registro");
+// const contrasena = require("../routes/contrasena");
+// const familiaviv = require("../routes/familia-y-vivienda");
+// const iniciosesion = require("../routes/inicio-sesion");
+const electrodomesticos = require("./routes/electrdomiesticos");
 
 // Ajustes
-app.set("port", process.env.PORT || 3002);
+app.set("port", process.env.PORT || 5000);
 
 // Middlewares
-app.use(cors());
+app.use(cors()); //ayuda a evitar bloqueos HTTPS (CORS)
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(morgan("dev"));
 
-//configura para resivir las peticiones desde otras aplicaciones, el tipo de datos (JSON)
 app.use((req, res, next) => {
-	res.setHeader(
-		"Access-Control-Allow-Headers",
-		"X-Requested-With, content-type"
-	);
-	res.setHeader("Access-Control-Allow-Origin", "*");
-	res.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE");
-	res.setHeader("Content-Type", "application/json;charset=utf-8");
+	res.setHeader("Access-Control-Allow-Origin", "*"); //acepta peticiones desde cualquier sitio
+	res.setHeader("Access-Control-Allow-Methods", "PUT,POST,PATCH,GET,DELETE"); //acepta los metodos CRUD
+	res.setHeader("Content-Type", "application/json;charset=utf-8"); //acepta datps tipo JSON y caracteres especiales
 	next();
 });
 
-app.use(require('./routes/test'));
-
-// app.get("/:path/:id", (req, res) => {
-// 	const { path, id } = req.params;
-// 	console.log(path);
-// 	res.json({ path, id });
-// });
-// app.get("/api", (req, res) => {
-// 	res.json({ path: "api" });
-// });
-// app.use("/api", contrasena);
-// app.use("/api", familiaviv);
+// Routes //
+app.use(ajustes);
+app.use(registro);
+// app.use( contrasena);
+// app.use( familiaviv);
+// app.use( iniciosesion);
+app.use(electrodomesticos);
 
 // Ajustes del servidor
 app.listen(app.get("port"), () => {

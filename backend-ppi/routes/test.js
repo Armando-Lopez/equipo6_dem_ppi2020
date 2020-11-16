@@ -7,7 +7,9 @@ router.get("/test/:id", (req, res) => {
 });
 
 router.post("/test", (req, res) => {
-	res.json({ data: req.body });
+	setTimeout(() => {
+		res.json({ data: req.body });
+	}, 3000);
 });
 
 module.exports = router;

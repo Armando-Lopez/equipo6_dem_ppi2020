@@ -8,7 +8,7 @@ ajustes de la cuenta */
 router.get("/ajustes/:id", (req, res) => {
   const { id } = req.params;
   mysqlConnection.query(
-    `SELECT Documento, Nombre, Email, Contrasena AS 'Contraseña' FROM Usuarios WHERE Id_usuario=${id}`,
+    `SELECT Documento, Nombre, Email, Contrasena FROM Usuarios WHERE Id_usuario=${id}`,
     (err, rows, fields) => {
       if (!err) {
         res.json(rows);
@@ -25,7 +25,7 @@ router.patch("/ajustes/:id", (req, res) => {
   const { fecha_nacimiento, genero, ciudad_residencia } = req.body;
   const { id } = req.params;
   mysqlConnection.query(
-    `UPDATE Usuarios SET Fecha_de_nacimiento = ${fecha_nacimiento}, Genero = ${genero}, Ciudad= ${ciudad_residencia} WHERE Id_usuario = ${id}`,
+    `UPDATE Usuarios SET Fecha_de_nacimiento = '${fecha_nacimiento}', Genero = '${genero}', Ciudad= '${ciudad_residencia}' WHERE Id_usuario = ${id}`,
     (err, rows, fields) => {
       if (!err) {
         res.json({ status: "¡Información actualizada!" });
