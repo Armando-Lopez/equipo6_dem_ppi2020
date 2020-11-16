@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.get("/test/:id", (req, res) => {
 	const { id } = req.params;
-	res.json({ in: "test", id });
+  res.json({ data: req.body });
 });
 
 router.post("/test", (req, res) => {
