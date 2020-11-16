@@ -4,8 +4,7 @@ const router = express.Router();
 const mysqlConnection = require("../db/db");
 
 /* Obtener la información del usuario en los 
-ajustes de la cuenta
- */
+ajustes de la cuenta*/
 router.get("/ajustes/:id", (req, res) => {
   const { id } = req.params;
   mysqlConnection.query(
