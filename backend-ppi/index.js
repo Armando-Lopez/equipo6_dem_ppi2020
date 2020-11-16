@@ -33,7 +33,7 @@ app.post("/registro", (req, res) => {
 });
 // app.get("/:path/:id", (req, res) => {
 // 	const { path, id } = req.params;
-// 	console.log(path);
+// 	console.log(path)
 // 	res.json({ path, id });
 // });
 // app.get("/api", (req, res) => {
