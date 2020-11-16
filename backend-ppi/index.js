@@ -25,6 +25,7 @@ app.use((req, res, next) => {
 });
 
 app.use(require('./routes/test'));
+app.use(require('./routes/registro'));
 
 // app.get("/:path/:id", (req, res) => {
 // 	const { path, id } = req.params;
