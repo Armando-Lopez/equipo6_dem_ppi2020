@@ -18,15 +18,14 @@ app.use(express.urlencoded({ extended: false }));
 
 //configura para resivir las peticiones desde otras aplicaciones, el tipo de datos (JSON)
 app.use((req, res, next) => {
-	res.header("Access-Control-Allow-Origin", "https://ljh5p.csb.app");
+	res.header("Access-Control-Allow-Origin", "*");
 	res.header(
 		"Access-Control-Allow-Headers",
 		"Origin, X-Request-Width, Content-Type, Accept, Authorization"
 	);
 
-  res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE");
 	if (req.method === "OPTIONS") {
-    res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE");
+    res.header("Access-Control-Allow-Methods", "PUT, OPTIONS POST, GET, DELETE");
     return res.status(200).json({})
 	}
 	res.header("Content-Type", "application/json;charset=utf-8");
@@ -52,5 +51,6 @@ app.post("/registro", (req, res) => {
 
 // Ajustes del servidor
 app.listen(app.get("port"), () => {
+  console.log(cors());
 	console.log(`Servidor corriendo en el puerto ${app.get("port")}`);
 });

@@ -6,8 +6,7 @@ router.get("/test/:data", (req, res) => {
 });
 
 router.post("/test", (req, res) => {
-	res.header("Access-Control-Allow-Origin", "*");
-	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "*");
 	res.json({ data: req.body });
 });
 
