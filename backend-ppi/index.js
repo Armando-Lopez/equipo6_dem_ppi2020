@@ -12,6 +12,7 @@ app.set("port", process.env.PORT || 3002);
 
 // Middlewares
 app.use(cors());
+app.use(cors({origin: '*'}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // app.use(morgan("dev"));
@@ -23,11 +24,7 @@ app.use((req, res, next) => {
 		"Access-Control-Allow-Headers",
 		"Origin, X-Request-Width, Content-Type, Accept, Authorization"
 	);
-
-	if (req.method === "OPTIONS") {
-    res.header("Access-Control-Allow-Methods", "PUT, OPTIONS POST, GET, DELETE");
-    return res.status(200).json({})
-	}
+	res.header("Access-Control-Allow-Methods", "PUT, OPTIONS POST, GET, DELETE");
 	res.header("Content-Type", "application/json;charset=utf-8");
 	next();
 });
