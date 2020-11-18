@@ -11,7 +11,8 @@ router.post("/test", (req, res) => {
 });
 
 router.post("/test/:data", (req, res) => {
-	res.json({ data: req.body, params: req.params });
+  let {data} = req.params
+	res.json({ data: req.body, params: JSON.parse(data) });
 });
 
 module.exports = router;
